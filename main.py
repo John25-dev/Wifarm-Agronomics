@@ -296,5 +296,6 @@ async def audits(u=Depends(role_guard("admin","backoffice")),limit:int=50):
         cur.execute("SELECT a.*,u.name uname FROM audit_logs a LEFT JOIN users u ON u.id=a.user_id ORDER BY a.created_at DESC LIMIT %s",(limit,))
         return cur.fetchall()
 
-if __name__ == "__main__":
-    run_service(app)
+@app.get("/")
+async def root():
+    return {"service": "Wifarm Agronomics API", "status": "running"}
