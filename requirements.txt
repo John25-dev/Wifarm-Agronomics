@@ -1,0 +1,7 @@
+fastapi==0.116.1
+uvicorn[standard]
+pymysql==1.1.1
+pyjwt==2.9.0
+bcrypt==4.2.1
+codewords-client==0.4.6
+cryptography
